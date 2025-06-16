@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head (titulo='Acerca de')"></head>
+
+<body>
+<!-- Muestra solo si está autenticado -->
+<div th:if="${isAuthenticated}">
+    <div th:replace="navBar :: navbar-authenticated"></div>
+</div>
+
+<!-- Muestra solo si NO está autenticado -->
+<div th:unless="${isAuthenticated}">
+    <div th:replace="navBar :: navbar-guest"></div>
+</div>
+
+<div class="container-fluid">
+    <div class="container-fluid">
+        <h1>ToDoList</h1>
+        <ul>
+            <li>Desarrollada por Fernando Aldaz</li>
+            <li>Versión 1.0.1</li>
+            <li>Fecha de release: 04/06/2025</li>
+        </ul>
+    </div>
+
+</div>
+
+<div th:replace="fragments::javascript"/>
+
+</body>
+</html>
