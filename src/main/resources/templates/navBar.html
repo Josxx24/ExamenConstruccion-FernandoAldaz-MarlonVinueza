@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
     <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
 
@@ -25,7 +26,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span th:text="${usuario?.nombre ?: 'Usuario'}">Usuario</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
@@ -37,7 +37,6 @@
                         <li>
                             <a class="dropdown-item" th:href="@{/logout}">
                                 <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-                                <span th:text="${usuario?.nombre ?: ''}"></span>
                             </a>
                         </li>
                     </ul>
