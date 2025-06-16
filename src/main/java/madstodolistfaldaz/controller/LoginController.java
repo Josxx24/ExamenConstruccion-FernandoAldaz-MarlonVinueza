@@ -26,7 +26,7 @@ public class LoginController {
     ManagerUserSession managerUserSession;
 
     @GetMapping("/")
-    public String home(Model model) {
+    public String home() {
         return "redirect:/login";
     }
 

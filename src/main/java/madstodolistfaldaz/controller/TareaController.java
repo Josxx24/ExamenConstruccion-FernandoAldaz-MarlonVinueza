@@ -59,7 +59,7 @@ public class TareaController {
 
         UsuarioData usuario = usuarioService.findById(idUsuario);
         model.addAttribute("usuario", usuario);
-        return "formNuevaTarea";
+        return "formNuevoEstudiante";
     }
 
     @PostMapping("/usuarios/{id}/tareas/nueva")
@@ -70,7 +70,7 @@ public class TareaController {
         comprobarUsuarioLogeado(idUsuario);
 
         tareaService.nuevaTareaUsuario(idUsuario, tareaData.getTitulo());
-        flash.addFlashAttribute("mensaje", "Tarea creada correctamente");
+        flash.addFlashAttribute("mensaje", "Estudiante agregado correctamente");
         return "redirect:/usuarios/" + idUsuario + "/tareas";
     }
 
@@ -102,7 +102,7 @@ public class TareaController {
         model.addAttribute("usuario", usuario);
         model.addAttribute("tarea", tarea);
         tareaData.setTitulo(tarea.getTitulo());
-        return "formEditarTarea";
+        return "formEditarEstudiante";
     }
 
     @PostMapping("/tareas/{id}/editar")
@@ -118,7 +118,7 @@ public class TareaController {
         comprobarUsuarioLogeado(idUsuario);
 
         tareaService.modificaTarea(idTarea, tareaData.getTitulo());
-        flash.addFlashAttribute("mensaje", "Tarea modificada correctamente");
+        flash.addFlashAttribute("mensaje", "Estudiante modificado correctamente");
         return "redirect:/usuarios/" + tarea.getUsuarioId() + "/tareas";
     }
 
